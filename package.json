@@ -5,6 +5,10 @@
   "description": "Helper function to compare the specificity of two URIs, routes, or paths",
   "main": "dist/index.js",
   "packageManager": "pnpm@10.4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onlywei/compare-uri-specificity.git"
+  },
   "scripts": {
     "build": "tsc",
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
