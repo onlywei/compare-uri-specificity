@@ -17,7 +17,7 @@ export type SpecificityScore = 0 | 1;
  * Compares two URIs to determine which one is more specific
  * @param uri1 - First URI to compare
  * @param uri2 - Second URI to compare
- * @returns 1 if uri1 is more specific, -1 if uri2 is more specific, 0 if equal
+ * @returns -1 if uri1 is more specific, 1 if uri2 is more specific, 0 if equal
  * @throws {Error} If either URI is invalid or malformed
  */
 export function compareUriSpecificity(uri1: string, uri2: string): ComparisonResult {
@@ -31,7 +31,7 @@ export function compareUriSpecificity(uri1: string, uri2: string): ComparisonRes
 
   // Compare segment length first
   if (segments1.length !== segments2.length) {
-    return segments1.length > segments2.length ? 1 : -1;
+    return segments1.length > segments2.length ? -1 : 1;
   }
 
   // If same length, compare segment by segment for wildcards or parameters
@@ -40,13 +40,13 @@ export function compareUriSpecificity(uri1: string, uri2: string): ComparisonRes
     const score2 = getSegmentSpecificityScore(segments2[i]);
 
     if (score1 !== score2) {
-      return score1 > score2 ? 1 : -1;
+      return score1 > score2 ? -1 : 1;
     }
 
     // If both segments are static (score === 1), compare their lengths
     if (score1 === 1 && score2 === 1) {
       if (segments1[i].length !== segments2[i].length) {
-        return segments1[i].length > segments2[i].length ? 1 : -1;
+        return segments1[i].length > segments2[i].length ? -1 : 1;
       }
     }
   }

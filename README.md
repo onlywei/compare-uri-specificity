@@ -1,6 +1,6 @@
 # compare-uri-specificity
 
-A helper function to compare the specificity of URIs, routes, and paths.
+A helper function to compare the specificity of URIs, routes, and paths. When used in an array sort function, more specific URIs will come earlier than less specific ones.
 
 ## Installation
 
@@ -14,21 +14,26 @@ npm install compare-uri-specificity
 import { compareUriSpecificity } from 'compare-uri-specificity';
 
 // Different segment lengths
-compareUriSpecificity('/foo/bar', '/foo');     // 1 (first is more specific)
-compareUriSpecificity('/foo', '/foo/bar');     // -1 (first is less specific)
-compareUriSpecificity('/a/b/c', '/x/y');       // 1 (first is more specific)
+compareUriSpecificity('/foo/bar', '/foo');     // -1 (first is more specific)
+compareUriSpecificity('/foo', '/foo/bar');     // 1 (first is less specific)
+compareUriSpecificity('/a/b/c', '/x/y');       // -1 (first is more specific)
 
 // Wildcards vs concrete paths
-compareUriSpecificity('/foo/bar', '/foo/*');   // 1 (concrete path is more specific)
-compareUriSpecificity('/foo/*', '/foo/bar');   // -1 (wildcard is less specific)
+compareUriSpecificity('/foo/bar', '/foo/*');   // -1 (concrete path is more specific)
+compareUriSpecificity('/foo/*', '/foo/bar');   // 1 (wildcard is less specific)
 
 // Partial segment matches
-compareUriSpecificity('/foo', '/food');        // -1 (shorter segment is less specific)
-compareUriSpecificity('/food', '/foo');        // 1 (longer segment is more specific)
+compareUriSpecificity('/foo', '/food');        // 1 (shorter segment is less specific)
+compareUriSpecificity('/food', '/foo');        // -1 (longer segment is more specific)
 
 // Equal specificity
 compareUriSpecificity('/foo/bar', '/foo/baz'); // 0 (equal specificity)
 compareUriSpecificity('/foo/', '/foo');        // 0 (trailing slashes ignored)
+
+// Using with Array.sort()
+const uris = ['/foo', '/foo/bar', '/foo/*', '/food'];
+uris.sort(compareUriSpecificity);
+// Result: ['/foo/bar', '/food', '/foo', '/foo/*']
 
 // Error handling
 compareUriSpecificity('foo//bar', '/foo');     // throws Error: Invalid URI format

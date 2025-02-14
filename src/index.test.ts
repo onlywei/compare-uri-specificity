@@ -4,14 +4,14 @@ import { compareUriSpecificity } from './index.js';
 
 describe('compareUriSpecificity', () => {
   it('compares URIs with different segment lengths', () => {
-    assert.equal(compareUriSpecificity('/foo/bar', '/foo'), 1);
-    assert.equal(compareUriSpecificity('/foo', '/foo/bar'), -1);
-    assert.equal(compareUriSpecificity('/a/b/c', '/x/y'), 1);
+    assert.equal(compareUriSpecificity('/foo/bar', '/foo'), -1);
+    assert.equal(compareUriSpecificity('/foo', '/foo/bar'), 1);
+    assert.equal(compareUriSpecificity('/a/b/c', '/x/y'), -1);
   });
 
   it('handles equal length URIs with different specificities', () => {
-    assert.equal(compareUriSpecificity('/foo/bar', '/foo/*'), 1);
-    assert.equal(compareUriSpecificity('/foo/*', '/foo/bar'), -1);
+    assert.equal(compareUriSpecificity('/foo/bar', '/foo/*'), -1);
+    assert.equal(compareUriSpecificity('/foo/*', '/foo/bar'), 1);
   });
 
   it('handles URIs with equal specificity', () => {
@@ -25,8 +25,8 @@ describe('compareUriSpecificity', () => {
   });
 
   it('compares partial segment matches correctly', () => {
-    assert.equal(compareUriSpecificity('/foo', '/food'), -1);
-    assert.equal(compareUriSpecificity('/food', '/foo'), 1);
+    assert.equal(compareUriSpecificity('/foo', '/food'), 1);
+    assert.equal(compareUriSpecificity('/food', '/foo'), -1);
   });
 
   it('throws error for invalid URIs', () => {
