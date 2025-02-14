@@ -1,5 +1,11 @@
 # compare-uri-specificity
 
+## 0.2.0
+
+### Minor Changes
+
+- Reverse the comparison order
+
 ## 0.1.3
 
 ### Patch Changes
