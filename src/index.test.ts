@@ -24,6 +24,11 @@ describe('compareUriSpecificity', () => {
     assert.equal(compareUriSpecificity('/foo///', '/foo'), 0);
   });
 
+  it('compares partial segment matches correctly', () => {
+    assert.equal(compareUriSpecificity('/foo', '/food'), -1);
+    assert.equal(compareUriSpecificity('/food', '/foo'), 1);
+  });
+
   it('throws error for invalid URIs', () => {
     assert.throws(() => compareUriSpecificity('foo//bar', '/foo'), /Invalid URI format/);
     assert.throws(() => compareUriSpecificity('/foo', 'foo//bar'), /Invalid URI format/);

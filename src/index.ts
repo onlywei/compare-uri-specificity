@@ -42,6 +42,13 @@ export function compareUriSpecificity(uri1: string, uri2: string): ComparisonRes
     if (score1 !== score2) {
       return score1 > score2 ? 1 : -1;
     }
+
+    // If both segments are static (score === 1), compare their lengths
+    if (score1 === 1 && score2 === 1) {
+      if (segments1[i].length !== segments2[i].length) {
+        return segments1[i].length > segments2[i].length ? 1 : -1;
+      }
+    }
   }
 
   return 0;
