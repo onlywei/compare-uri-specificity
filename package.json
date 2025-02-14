@@ -9,6 +9,7 @@
     "build": "tsc",
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "check-format": "biome check .",
+    "ci": "npm run build && npm run check-format && npm run check-exports && npm run test",
     "format": "biome check --write .",
     "test": "npm run build && node --test"
   },
