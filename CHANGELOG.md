@@ -1,5 +1,11 @@
 # compare-uri-specificity
 
+## 0.1.3
+
+### Patch Changes
+
+- Add some keywords to package.json
+
 ## 0.1.2
 
 ### Patch Changes
