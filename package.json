@@ -19,7 +19,18 @@
     "prepublishOnly": "npm run ci",
     "test": "npm run build && node --test"
   },
-  "keywords": [],
+  "keywords": [
+    "compare",
+    "matcher",
+    "path",
+    "pattern",
+    "priority",
+    "route",
+    "routing",
+    "specificity",
+    "uri",
+    "url"
+  ],
   "author": "Wei Wang <wei@fastmail.com>",
   "license": "MIT",
   "files": ["dist", "!dist/*.test.*"],
