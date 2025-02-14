@@ -1,6 +1,6 @@
 {
   "name": "compare-uri-specificity",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "description": "Helper function to compare the specificity of two URIs, routes, or paths",
   "main": "dist/index.js",
