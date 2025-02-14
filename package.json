@@ -11,7 +11,7 @@
     "test": "npm run build && node --test"
   },
   "keywords": [],
-  "author": "Wei Wang",
+  "author": "Wei Wang <wei@fastmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
