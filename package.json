@@ -1,0 +1,21 @@
+{
+  "name": "compare-uri-specificity",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Helper function to compare the specificity of two URIs, routes, or paths",
+  "packageManager": "pnpm@10.4.0",
+  "scripts": {
+    "build": "tsc",
+    "format": "biome check --write .",
+    "lint": "biome check .",
+    "test": "npm run build && node --test"
+  },
+  "keywords": [],
+  "author": "Wei Wang",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "22.13.4",
+    "typescript": "5.7.3"
+  }
+}
