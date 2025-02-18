@@ -1,6 +1,6 @@
 {
   "name": "compare-uri-specificity",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "description": "Helper function to compare the specificity of two URIs, routes, or paths",
   "main": "dist/index.js",
@@ -32,7 +32,10 @@
   ],
   "author": "Wei Wang <wei@fastmail.com>",
   "license": "MIT",
-  "files": ["dist", "!dist/*.test.*"],
+  "files": [
+    "dist",
+    "!dist/*.test.*"
+  ],
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.3",
     "@biomejs/biome": "1.9.4",
