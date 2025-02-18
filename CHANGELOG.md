@@ -1,5 +1,11 @@
 # compare-uri-specificity
 
+## 0.2.1
+
+### Patch Changes
+
+- 29af9a4: Set up changeset release action and use type stripping for unit tests.
+
 ## 0.2.0
 
 ### Minor Changes
