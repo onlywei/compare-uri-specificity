@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { compareUriSpecificity } from './index.js';
+import { compareUriSpecificity } from './index.ts';
 
 describe('compareUriSpecificity', () => {
   it('compares URIs with different segment lengths', () => {
