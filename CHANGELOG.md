@@ -1,5 +1,11 @@
 # compare-uri-specificity
 
+## 0.2.2
+
+### Patch Changes
+
+- 3894457: Use npm trusted publisher
+
 ## 0.2.1
 
 ### Patch Changes
