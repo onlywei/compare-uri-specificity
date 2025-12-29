@@ -13,10 +13,10 @@
     "build": "tsc",
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "check-format": "biome check .",
-    "ci": "npm run build && npm run check-format && npm run check-exports && npm run test",
+    "ci": "pnpm build && pnpm check-format && pnpm check-exports && pnpm test",
     "format": "biome check --write .",
-    "prepublishOnly": "npm run ci",
-    "test": "node --experimental-strip-types --test"
+    "prepublishOnly": "pnpm run ci",
+    "test": "node --test"
   },
   "keywords": [
     "compare",
