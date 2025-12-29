@@ -1,5 +1,15 @@
 # compare-uri-specificity
 
+## 1.0.0
+
+### Major Changes
+
+- b51d8fc: Mark package stable - release v1.0.0
+
+### Patch Changes
+
+- b51d8fc: Update all dependencies
+
 ## 0.2.2
 
 ### Patch Changes
