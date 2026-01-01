@@ -6,6 +6,7 @@
   },
   "rules": {
     "array-callback-return": "error",
+    "arrow-body-style": "off",
     "eqeqeq": "error",
     "func-style": ["error", "declaration"],
     "id-length": "off",
