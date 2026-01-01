@@ -1,23 +1,7 @@
 {
   "name": "compare-uri-specificity",
   "version": "1.0.0",
-  "type": "module",
   "description": "Helper function to compare the specificity of two URIs, routes, or paths",
-  "main": "dist/index.js",
-  "packageManager": "pnpm@10.26.2+sha512.0e308ff2005fc7410366f154f625f6631ab2b16b1d2e70238444dd6ae9d630a8482d92a451144debc492416896ed16f7b114a86ec68b8404b2443869e68ffda6",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/onlywei/compare-uri-specificity.git"
-  },
-  "scripts": {
-    "build": "tsc",
-    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
-    "check-format": "biome check .",
-    "ci": "pnpm build && pnpm check-format && pnpm check-exports && pnpm test",
-    "format": "biome check --write .",
-    "prepublishOnly": "pnpm run ci",
-    "test": "node --test"
-  },
   "keywords": [
     "compare",
     "matcher",
@@ -30,17 +14,35 @@
     "uri",
     "url"
   ],
-  "author": "Wei Wang <wei@fastmail.com>",
   "license": "MIT",
+  "author": "Wei Wang <wei@fastmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onlywei/compare-uri-specificity.git"
+  },
   "files": [
     "dist",
     "!dist/*.test.*"
   ],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "lint": "oxlint .",
+    "format:check": "oxfmt --check .",
+    "format": "oxfmt --write .",
+    "prepublishOnly": "pnpm build",
+    "test": "node --test"
+  },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
-    "@biomejs/biome": "^2.3.10",
     "@changesets/cli": "^2.29.8",
     "@types/node": "^24.10.4",
+    "oxfmt": "^0.21.0",
+    "oxlint": "^1.36.0",
     "typescript": "^5.9.3"
-  }
+  },
+  "packageManager": "pnpm@10.26.2+sha512.0e308ff2005fc7410366f154f625f6631ab2b16b1d2e70238444dd6ae9d630a8482d92a451144debc492416896ed16f7b114a86ec68b8404b2443869e68ffda6"
 }
