@@ -86,7 +86,9 @@ function cleanUri(uri: string): string {
  */
 function getSegmentSpecificityScore(segment: string): SpecificityScore {
   // Wildcards are least specific
-  if (segment === '*') return 0;
+  if (segment === '*') {
+    return 0;
+  }
   // All other segments are treated as static and most specific
   return 1;
 }
