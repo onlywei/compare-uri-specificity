@@ -31,8 +31,9 @@
     "build": "rm -rf dist && tsc",
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "lint": "oxlint .",
+    "lint:fix": "oxlint --fix .",
     "format:check": "oxfmt --check .",
-    "format": "oxfmt --write .",
+         "format": "oxfmt --write .",
     "prepublishOnly": "pnpm build",
     "test": "node --test"
   },
