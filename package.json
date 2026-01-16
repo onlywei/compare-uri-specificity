@@ -1,6 +1,6 @@
 {
   "name": "compare-uri-specificity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helper function to compare the specificity of two URIs, routes, or paths",
   "keywords": [
     "compare",

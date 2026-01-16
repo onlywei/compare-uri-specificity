@@ -1,5 +1,12 @@
 # compare-uri-specificity
 
+## 1.0.1
+
+### Patch Changes
+
+- 55ceec7: Add sideEffects: false to package.json for better tree-shaking support
+- 33632d0: Switch to oxlint and oxfmt from Biome
+
 ## 1.0.0
 
 ### Major Changes
